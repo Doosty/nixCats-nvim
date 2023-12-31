@@ -10,6 +10,13 @@ require('myLuaConf.plugins.treesitter')
 
 require('myLuaConf.plugins.completion')
 
+require('myLuaConf.plugins.folding')
+
+require('myLuaConf.plugins.statuscol')
+
+require('myLuaConf.plugins.conform-fmt')
+
+
 if nixCats('markdown') then
   vim.g.mkdp_auto_close = 0
   vim.keymap.set('n','<leader>mp','<cmd>MarkdownPreview <CR>',{ noremap = true, desc = 'markdown preview' })

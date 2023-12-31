@@ -63,7 +63,7 @@ end
 -- servers.rust_analyzer = {},
 -- servers.tsserver = {},
 -- servers.html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+servers.omnisharp = { cmd = { "OmniSharp" }, }
 
 if not require('nixCatsUtils').isNixCats then
   -- Ensure the servers above are installed
