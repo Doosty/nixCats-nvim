@@ -90,3 +90,17 @@ require('which-key').register {
   ['<leader>m'] = { name = '[M]arkdown', _ = 'which_key_ignore' },
   ['<leader>F'] = { name = '[F]ile explorer', _ = 'which_key_ignore' },
 }
+
+-- Toggle Term
+require("toggleterm").setup()
+vim.keymap.set('n', '<leader>tt', '<Cmd>ToggleTerm<CR>')
+
+-- Neo Tree
+require("neo-tree").setup( { source_selector = { winbar = true, statusline = true }} )
+vim.keymap.set('n', '<leader>ft', '<Cmd>Neotree toggle<CR>')
+
+-- OSC Yank
+local osc52 = require('osc52')
+vim.keymap.set('n', '<leader>y', osc52.copy_operator, {expr = true})
+vim.keymap.set('n', '<leader>yy', '<leader>y_', {remap = true})
+vim.keymap.set('v', '<leader>y', osc52.copy_visual)
