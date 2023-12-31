@@ -106,6 +106,7 @@
             zig
             omnisharp-roslyn
             netcoredbg
+            uncrustify
           ];
           neonixdev = {
             # also you can do this.
@@ -187,6 +188,7 @@
                 statuscol-nvim
                 nvim-osc52
                 nvim-ufo
+                conform-nvim
               ];
             };
           };
