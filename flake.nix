@@ -30,7 +30,7 @@
     # a flake import. We will import this one with an overlay
     # but you could also import the package itself instead.
     # overlays are just nice if they are offered.
-    nixd.url = "github:nix-community/nixd";
+    #nixd.url = "github:nix-community/nixd";
   };
 
   # see :help nixCats.flake.outputs
@@ -55,7 +55,7 @@
       # or see :help nixCats.flake.nixperts.overlays
       otherOverlays = (import ./overlays inputs) ++ [
         # add any flake overlays here.
-        inputs.nixd.overlays.default
+        #inputs.nixd.overlays.default
       ];
       pkgs = import nixpkgs {
         inherit system;
