@@ -103,6 +103,9 @@
             universal-ctags
             ripgrep
             fd
+            zig
+            omnisharp-roslyn
+            netcoredbg
           ];
           neonixdev = {
             # also you can do this.
@@ -178,6 +181,12 @@
                 nvim-surround
                 indent-blankline-nvim
                 nvim-web-devicons
+
+                toggleterm-nvim
+                neo-tree-nvim
+                statuscol-nvim
+                nvim-osc52
+                nvim-ufo
               ];
             };
           };
