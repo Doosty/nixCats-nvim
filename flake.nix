@@ -318,6 +318,39 @@
             # see :help nixCats
           };
         };
+        debugCats = {
+          settings = settings.nixCats; 
+          categories = {
+            generalBuildInputs = true;
+            markdown = true;
+            general.vimPlugins = true;
+            general.gitPlugins = true;
+            custom = true;
+            neonixdev = true;
+            test = {
+              subtest1 = true;
+            };
+            debug = true;
+            # this does not have an associated category of plugins, 
+            # but lua can still check for it
+            lspDebugMode = false;
+            # you could also pass something else:
+            themer = true;
+            colorscheme = "onedark";
+            theBestCat = "says meow!!";
+            theWorstCat = {
+              thing'1 = [ "MEOW" "HISSS" ];
+              thing2 = [
+                {
+                  thing3 = [ "give" "treat" ];
+                }
+                "I LOVE KEYBOARDS"
+              ];
+              thing4 = "couch is for scratching";
+            };
+            # see :help nixCats
+          };
+        };
         regularCats = { 
           settings = settings.unwrappedLua;
           categories = {
