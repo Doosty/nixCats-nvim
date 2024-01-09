@@ -110,7 +110,7 @@
           ];
           neonixdev = {
             # also you can do this.
-            inherit (pkgs) nix-doc nil lua-language-server nixd;
+            inherit (pkgs) nix-doc nil lua-language-server nixd alejandra;
             # nix-doc tags will make your tags much better in nix
             # but only if you have nil as well for some reason
           };
