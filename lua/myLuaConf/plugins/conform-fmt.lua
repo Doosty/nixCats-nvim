@@ -31,7 +31,7 @@ end, {
   desc = "Re-enable autoformat-on-save",
 })
 
-vim.api.nvim_create_user_command('DiffFormat', function()
+vim.api.nvim_create_user_command('FormatDiff', function()
   local lines = vim.fn.system('git diff --unified=0'):gmatch('[^\n\r]+')
   local ranges = {}
   for line in lines do
