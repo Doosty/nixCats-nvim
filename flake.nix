@@ -180,6 +180,7 @@
                 vim-repeat
                 undotree
                 nvim-surround
+                eyeliner-nvim
                 indent-blankline-nvim
                 nvim-web-devicons
 
