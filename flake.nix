@@ -111,7 +111,8 @@
             netcoredbg
           ];
           zigdev = with pkgs; [
-            zls
+            zls # lsp
+            lldb # debugger
           ];
           neonixdev = {
             # also you can do this.

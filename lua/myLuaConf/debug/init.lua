@@ -77,6 +77,26 @@ require("nvim-dap-virtual-text").setup {
 -- Install lang specific config
 -- check language categories, require file with debugger setup in it.
 
+-- Zig debugger
+dap.adapters.lldb = {
+  type = 'executable',
+  command = 'lldb',
+  name = 'lldb'
+}
+dap.configurations.zig = {
+  {
+    name = 'Launch',
+    type = 'lldb',
+    request = 'launch',
+    program = function()
+      return vim.fn.input('Path to dll: ', vim.fn.getcwd(), 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    args = {},
+  },
+}
+
 -- Csharp debugging adapter
 dap.adapters.coreclr = {
   type = 'executable',
