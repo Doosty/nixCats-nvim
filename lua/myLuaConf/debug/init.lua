@@ -77,7 +77,9 @@ require("nvim-dap-virtual-text").setup {
 -- Install lang specific config
 -- check language categories, require file with debugger setup in it.
 
--- Zig debugger
+-- TO CONSIDER: use vscodes `launch.json` to set up the paths per-project
+
+-- Zig debugger  # https://terminalprogrammer.com/neovim-setup-for-zig#heading-debugger
 dap.adapters.lldb = {
   type = 'executable',
   command = 'lldb',
@@ -115,27 +117,14 @@ dap.configurations.cs = {
     program = function()
       return vim.fn.input('Path to dll: ', vim.fn.getcwd(), 'file')
     end,
-    -- program = "${file}",
+--   program = function()
+--       local dll = io.popen("find . -type f -path \"*/bin/Debug/*.dll\"")
+--       return pwd() .. "/" .. dll:lines()()
+--   end,
+--   program = "${file}",
   },
-}
--- dap.adapters.netcoredbg = {
---   type = 'executable',
---   command = 'netcoredbg',
---   args = {'--interpreter=vscode'}
--- }
 -- local function pwd() return io.popen("pwd"):lines()() end
--- dap.configurations.cs = {
---     {
---         type = "netcoredbg",
---         name = "launch - netcoredbg",
---         request = "launch",
---         program = function()
---             local dll = io.popen("find . -type f -path \"*/bin/Debug/*.dll\"")
---             return pwd() .. "/" .. dll:lines()()
---         end,
---         stopAtEntry = true,
---     },
--- }
+}
 -- https://github.com/mfussenegger/nvim-dap/issues/177
 -- https://aaronbos.dev/posts/debugging-csharp-neovim-nvim-dap
 
