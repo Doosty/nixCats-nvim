@@ -64,6 +64,7 @@ end
 -- servers.tsserver = {},
 -- servers.html = { filetypes = { 'html', 'twig', 'hbs'} },
 servers.omnisharp = { cmd = { "OmniSharp" }, }
+servers.zls = {}
 
 if not require('nixCatsUtils').isNixCats then
   -- Ensure the servers above are installed

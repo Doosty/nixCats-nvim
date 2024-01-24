@@ -103,10 +103,15 @@
             universal-ctags
             ripgrep
             fd
-            zig
+            zig # here as a c compiler
+            uncrustify
+          ];
+          csharpdev = with pkgs; [
             omnisharp-roslyn
             netcoredbg
-            uncrustify
+          ];
+          zigdev = with pkgs; [
+            zls
           ];
           neonixdev = {
             # also you can do this.
@@ -328,6 +333,74 @@
             general.gitPlugins = true;
             custom = true;
             neonixdev = true;
+            test = {
+              subtest1 = true;
+            };
+            debug = true;
+            # this does not have an associated category of plugins, 
+            # but lua can still check for it
+            lspDebugMode = false;
+            # you could also pass something else:
+            themer = true;
+            colorscheme = "onedark";
+            theBestCat = "says meow!!";
+            theWorstCat = {
+              thing'1 = [ "MEOW" "HISSS" ];
+              thing2 = [
+                {
+                  thing3 = [ "give" "treat" ];
+                }
+                "I LOVE KEYBOARDS"
+              ];
+              thing4 = "couch is for scratching";
+            };
+            # see :help nixCats
+          };
+        };
+        nixCatsCsharp = {
+          settings = settings.nixCats; 
+          categories = {
+            generalBuildInputs = true;
+            markdown = true;
+            general.vimPlugins = true;
+            general.gitPlugins = true;
+            custom = true;
+            neonixdev = true;
+            csharpdev = true;
+            test = {
+              subtest1 = true;
+            };
+            debug = true;
+            # this does not have an associated category of plugins, 
+            # but lua can still check for it
+            lspDebugMode = false;
+            # you could also pass something else:
+            themer = true;
+            colorscheme = "onedark";
+            theBestCat = "says meow!!";
+            theWorstCat = {
+              thing'1 = [ "MEOW" "HISSS" ];
+              thing2 = [
+                {
+                  thing3 = [ "give" "treat" ];
+                }
+                "I LOVE KEYBOARDS"
+              ];
+              thing4 = "couch is for scratching";
+            };
+            # see :help nixCats
+          };
+        };
+        nixCatsZig = {
+          settings = settings.nixCats; 
+          categories = {
+            generalBuildInputs = true;
+            markdown = true;
+            general.vimPlugins = true;
+            general.gitPlugins = true;
+            custom = true;
+            neonixdev = true;
+            zigdev = true;
             test = {
               subtest1 = true;
             };
