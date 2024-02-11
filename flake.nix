@@ -185,6 +185,7 @@
               indent-blankline-nvim
               nvim-web-devicons
 
+              eyeliner-nvim
               toggleterm-nvim
               neo-tree-nvim
               statuscol-nvim
