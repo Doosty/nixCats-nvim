@@ -97,10 +97,20 @@
           universal-ctags
           ripgrep
           fd
+          zig # here as a c compiler
+        ];
+        csharpdev = with pkgs; [
+          omnisharp-roslyn # lsp
+          netcoredbg # debugger
+          uncrustify # formatter
+        ];
+        zigdev = with pkgs; [
+          zls # lsp
+          lldb # debugger
         ];
         neonixdev = {
           # also you can do this.
-          inherit (pkgs) nix-doc nil lua-language-server nixd;
+          inherit (pkgs) nix-doc nil lua-language-server nixd alejandra;
           # nix-doc tags will make your tags much better in nix
           # but only if you have nil as well for some reason
         };
@@ -174,6 +184,13 @@
               nvim-surround
               indent-blankline-nvim
               nvim-web-devicons
+
+              toggleterm-nvim
+              neo-tree-nvim
+              statuscol-nvim
+              nvim-osc52
+              nvim-ufo
+              conform-nvim
             ];
           };
         };
@@ -275,6 +292,96 @@
             subtest1 = true;
           };
           debug = false;
+          # this does not have an associated category of plugins, 
+          # but lua can still check for it
+          lspDebugMode = false;
+          # by default, we dont want lazy.nvim
+          # we could omit this for the same effect
+          lazy = false;
+          # you could also pass something else:
+          themer = true;
+          colorscheme = "onedark";
+          theBestCat = "says meow!!";
+          theWorstCat = {
+            thing'1 = [ "MEOW" "HISSS" ];
+            thing2 = [
+              {
+                thing3 = [ "give" "treat" ];
+              }
+              "I LOVE KEYBOARDS"
+            ];
+            thing4 = "couch is for scratching";
+          };
+          # see :help nixCats
+        };
+      };
+      nixCatsCsharp = { pkgs, ... }@misc: {
+        # see :help nixCats.flake.outputs.settings
+        settings = {
+          # will check for config in the store rather than .config
+          wrapRc = true;
+          configDirName = "nixCats-nvim";
+          aliases = [ "vim" "vimcat" ];
+          # nvimSRC = inputs.neovim;
+        };
+        # see :help nixCats.flake.outputs.packageDefinitions
+        categories = {
+          generalBuildInputs = true;
+          markdown = true;
+          general.vimPlugins = true;
+          general.gitPlugins = true;
+          custom = true;
+          neonixdev = true;
+          csharpdev = true;
+          test = {
+            subtest1 = true;
+          };
+          debug = true;
+          # this does not have an associated category of plugins, 
+          # but lua can still check for it
+          lspDebugMode = false;
+          # by default, we dont want lazy.nvim
+          # we could omit this for the same effect
+          lazy = false;
+          # you could also pass something else:
+          themer = true;
+          colorscheme = "onedark";
+          theBestCat = "says meow!!";
+          theWorstCat = {
+            thing'1 = [ "MEOW" "HISSS" ];
+            thing2 = [
+              {
+                thing3 = [ "give" "treat" ];
+              }
+              "I LOVE KEYBOARDS"
+            ];
+            thing4 = "couch is for scratching";
+          };
+          # see :help nixCats
+        };
+      };
+      nixCatsZig = { pkgs, ... }@misc: {
+        # see :help nixCats.flake.outputs.settings
+        settings = {
+          # will check for config in the store rather than .config
+          wrapRc = true;
+          configDirName = "nixCats-nvim";
+          aliases = [ "vim" "vimcat" ];
+          # nvimSRC = inputs.neovim;
+        };
+        # see :help nixCats.flake.outputs.packageDefinitions
+        categories = {
+          generalBuildInputs = true;
+          markdown = true;
+          general.vimPlugins = true;
+          general.gitPlugins = true;
+          custom = true;
+          neonixdev = true;
+          zigdev = true;
+          test = {
+            subtest1 = true;
+          };
+          debug = true;
           # this does not have an associated category of plugins, 
           # but lua can still check for it
           lspDebugMode = false;

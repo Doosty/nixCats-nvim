@@ -10,6 +10,12 @@ require('myLuaConf.plugins.treesitter')
 
 require('myLuaConf.plugins.completion')
 
+require('myLuaConf.plugins.folding')
+
+require('myLuaConf.plugins.statuscol')
+
+require('myLuaConf.plugins.conform-fmt')
+
 if nixCats('markdown') then
   vim.g.mkdp_auto_close = 0
   vim.keymap.set('n','<leader>mp','<cmd>MarkdownPreview <CR>',{ noremap = true, desc = 'markdown preview' })
@@ -135,4 +141,24 @@ require('which-key').register {
   ['<leader>m'] = { name = '[m]arkdown', _ = 'which_key_ignore' },
   ['<leader>F'] = { name = '[F]ile explorer', _ = 'which_key_ignore' },
   ['<leader>t'] = { name = '[t]oggles', _ = 'which_key_ignore' },
+}
+
+-- Toggle Term
+require("toggleterm").setup()
+vim.keymap.set('n', '<leader>tt', '<Cmd>ToggleTerm<CR>', { desc = 'ToggleTerm' })
+
+-- Neo Tree
+require("neo-tree").setup( { source_selector = { winbar = true, statusline = true }} )
+vim.keymap.set('n', '<leader>ft', '<Cmd>Neotree toggle<CR>', { desc = 'NeoTree' })
+
+-- OSC Yank
+local osc52 = require('osc52')
+vim.keymap.set('n', '<leader>y', osc52.copy_operator, {expr = true})
+vim.keymap.set('n', '<leader>yy', '<leader>y_', {remap = true})
+vim.keymap.set('v', '<leader>y', osc52.copy_visual)
+
+-- Eyeliner
+require'eyeliner'.setup {
+  highlight_on_key = true,
+  dim = false
 }
