@@ -192,6 +192,7 @@
               nvim-osc52
               nvim-ufo
               conform-nvim
+              diffview-nvim
             ];
           };
         };
